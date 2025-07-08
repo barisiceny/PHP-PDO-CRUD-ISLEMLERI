@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <title></title>
+    <title>Güncelle</title>
 </head>
 <?php
 include('fonc.php');
@@ -15,40 +15,40 @@ $result = $query->fetch();//executing query and getting data
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <a href="index.php"><button type="button" class="btn btn-danger btn-lg btn-block">Back To Homepage</button></a>
+                <a href="index.php"><button type="button" class="btn btn-danger btn-lg btn-block">Ana Sayfaya Dön</button></a>
                 <div class="card mb-3">
                     <div class="card-body">                     
                      <form method="post" action="" enctype="multipart/form-data">                      
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Başlık</label>
                         <input required type="text" value="<?= $result["title"] ?>" class="form-control" name="title"
-                        placeholder="Title">
+                        placeholder="Başlık">
                     </div>                  
                     <div class="form-group">
-                        <label>Content</label>
+                        <label>İçerik</label>
                         <input required type="text" value="<?= $result["content"] ?>" class="form-control" name="content"
-                        placeholder="Content">
+                        placeholder="İçerik">
                     </div>    
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Update Data</button>
+                        <button type="submit" class="btn btn-primary">Veriyi Güncelle</button>
                         <script type="text/javascript" src="js/sweetalert.min.js"></script>
                         <?php
-                   if ($_POST) { // We check if there is a post on the page.
-                 $title = $_POST['title']; // After the page is refreshed, we assign the posted values to the variables
+                   if ($_POST) { // Sayfada bir gönderi olup olmadığını kontrol ediyoruz.
+                 $title = $_POST['title']; // Sayfa yenilendikten sonra, yayınlanan değerleri değişkenlere atarız
                   $content = $_POST['content']; 
                      $error = "";
 
-    // We check if the data fields are empty. You can do it in other controls.
+    // Veri alanlarının boş olup olmadığını kontrol ediyoruz. Bunu diğer kontrollerde yapabilirsiniz.
     
     if ($title <> "" && $content <> "" && $error == "") {
-        //Data to change
+        //Değişecek veriler
         $line = [
             'id' => $_GET['id'],            
             'title' => $title,
             'content' => $content,
 
         ];
-        // We write our data update query code.z.
+        // Veri güncelleme sorgu kodumuzu yazıyoruz.
         $sql = "UPDATE article SET title=:title, content=:content WHERE id=:id;";
         $status = $connect->prepare($sql)->execute($line);
 
@@ -56,9 +56,9 @@ $result = $query->fetch();//executing query and getting data
             echo '<script>swal("Successful","Data Updated ","success").then((value)=>{ window.location.href = "index.php"});
 
             </script>';
-            // If our update query code worked, we are redirecting to index.php page.
+            // Güncelleme sorgu kodumuz işe yaradıysa, index.php sayfasına yönlendiriyoruz.
         } else {
-            echo 'An editing error has occurred. check your error: '; // If the id is not found or there is an error in the query, we print the error.
+            echo 'An editing error has occurred. check your error: '; // Kimlik bulunamazsa veya sorguda bir hata varsa, hatayı yazdırırız.
         }
     }
     if ($error != "") {
