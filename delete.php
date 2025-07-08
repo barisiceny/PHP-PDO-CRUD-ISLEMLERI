@@ -1,7 +1,7 @@
 <?php
 if ($_GET) {
 
-    // $page = $_GET["sayfa adı"]; Yönetici paneliniz için sayfa adını tanımladıysanız, bunu kullanabilirsiniz
+    // $page = $_GET["page name"]; Yönetici paneliniz için sayfa adını tanımladıysanız, bunu kullanabilirsiniz
     include("fonc.php"); // Veritabanı bağlantımızı sayfamıza dahil ediyoruz.
     $query = $connect->prepare("SELECT * FROM article Where id=:id");
     $query->execute(['id' => (int)$_GET["id"]]);
