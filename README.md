@@ -14,4 +14,4 @@ Bu projede PHP MYSQL (PDO) ve CRUD (Oluştur, Oku, Güncelle, Sil) işlemlerini 
 * Listeleme Verileri
 
 - Ekleme, Düzenleme, Silme Işlemlerini Uygulama
-  ![alt text]([https://github.com/FRTYZ/Crud-Operations-with-PHP-MYSQL-PDO/blob/main/img/crud-homepage.png](https://github.com/barisiceny/PHP-PDO-CRUD-ISLEMLERI/blob/main/img/crud-homepage.png)?raw=true)
+  ![alt text] (https://github.com/barisiceny/PHP-PDO-CRUD-ISLEMLERI/blob/main/img/crud-homepage.png?raw=true)
