@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<title></title>
+	<title>ekle</title>
 </head>
 <body>
 	<div class="container">
@@ -13,27 +13,27 @@
 					<div class="card-body">						
 						<form method="post" action="" enctype="multipart/form-data">
 							<div class="form-group">
-								<label>Title</label>
-								<input required type="text" class="form-control" name="title" placeholder="Write a Title">
+								<label>Başlık</label>
+								<input required type="text" class="form-control" name="title" placeholder="Başlık Girin">
 							</div>				
 							<div class="form-group">
-								<label>Content</label>
-								<input required type="text" class="form-control" name="content" placeholder="Write a Content">
+								<label>Içerik</label>
+								<input required type="text" class="form-control" name="content" placeholder="Bir İçerik Yaz">
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-primary">ADD</button>
+								<button type="submit" class="btn btn-primary">EKLE</button>
 								<script type="text/javascript" src="js/sweetalert.min.js"></script>
 							</div>
 							<?php
 include('fonc.php');
 
-if ($_POST) { // We check if there is a post on the page.
+if ($_POST) { // Sayfada bir gönderi olup olmadığını kontrol ediyoruz.
 
-    $title = $_POST['title'];// After the page is refreshed, we assign the posted values to the variables.
+    $title = $_POST['title'];// Sayfa yenilendikten sonra, yayınlanan değerleri değişkenlere atarız.
     $content = $_POST['content'];    
     $error = "";
 
-    // We check whether the data fields are empty. You can do it in other controls.
+    // Veri alanlarının boş olup olmadığını kontrol ediyoruz. Bunu diğer kontrollerde yapabilirsiniz.
     
     if ($title <> "" && $content <> "" && $error == "") { // Veri 
         //Data to change
