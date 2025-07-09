@@ -53,16 +53,16 @@ $result = $query->fetch();//Sorguyu yürütme ve veri alma
         $status = $connect->prepare($sql)->execute($line);
 
         if ($status) {
-            echo '<script>swal("Successful","Data Updated ","success").then((value)=>{ window.location.href = "index.php"});
+            echo '<script>swal("Başarılı","Veri Güncellendi ","success").then((value)=>{ window.location.href = "index.php"});
 
             </script>';
             // Güncelleme sorgu kodumuz işe yaradıysa, index.php sayfasına yönlendiriyoruz.
         } else {
-            echo 'An editing error has occurred. check your error: '; // Kimlik bulunamazsa veya sorguda bir hata varsa, hatayı yazdırırız.
+            echo 'Bir düzenleme hatası oluştu. Hatanızı kontrol edin: '; // id bulunamazsa veya sorguda bir hata varsa, hatayı yazdırırız.
         }
     }
     if ($error != "") {
-        echo '<script>swal("error","' . $error . '","error");</script>';
+        echo '<script>swal("Hata","' . $error . '","error");</script>';
     }
 }
     ?>
