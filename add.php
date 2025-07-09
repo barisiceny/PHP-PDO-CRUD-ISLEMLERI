@@ -47,18 +47,18 @@ if ($_POST) { // Sayfada bir gönderi olup olmadığını kontrol ediyoruz.
     	$status = $connect->prepare($sql)->execute($line);
 
     	if ($status) {
-    		echo '<script>swal("Successful","Added.","success").then((value)=>{ window.location.href = "index.php"});
+    		echo '<script>swal("Başarılı","Eklendi.","success").then((value)=>{ window.location.href = "index.php"});
     		</script>';
-            // If the update query worked, we redirect to the index.php page.
+            // Güncelleme sorgusu işe yaradıysa, index.php sayfasına yönlendiriyoruz.
 
     	}
     	
     	else {
-            echo '<script>swal("error","An error has occurred, please check.","error");</script>'; // If id is not found or there is an error in the query, we print the error.
+            echo '<script>swal("Hata", "Bir hata oluştu, lütfen kontrol edin.","error");</script>'; // If id is not found or there is an error in the query, we print the error.
         }
     }
     if ($error != "") {
-    	echo '<script>swal("error","' . $error . '","error");</script>';
+    	echo '<script>swal("Hata","' . $error . '","error");</script>';
     }
 }
 
