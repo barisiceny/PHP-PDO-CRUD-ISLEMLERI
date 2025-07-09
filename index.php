@@ -31,7 +31,7 @@
 
 						while($result=$query->fetch()) // Verilerimizi While Loop ile iade ediyoruz
 						
-						{  // Başlarken
+						{  // while Başlangıcı
 
 							?>
 							<tr>
@@ -75,7 +75,7 @@
 						</td>
 					</tr>
 					<?php
-						}  // While End
+						}  // While Bitişi
 
 						?>
 						
