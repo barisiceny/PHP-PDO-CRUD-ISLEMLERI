@@ -9,7 +9,7 @@ include('fonc.php');
 
 $query = $connect->prepare("SELECT * FROM article Where id=:id");
 $query->execute(['id' => (int)$_GET["id"]]);
-$result = $query->fetch();//executing query and getting data
+$result = $query->fetch();//Sorguyu yürütme ve veri alma
 ?>
 <body>
     <div class="container">
